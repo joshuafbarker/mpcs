@@ -1,0 +1,28 @@
+---
+import "../styles/global.css";
+import { SITE_NAME } from "../consts";
+---
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{SITE_NAME}</title>
+  </head>
+  <body>
+    <div>
+      <main>
+        <slot />
+      </main>
+
+      <footer>
+        <hr class="border-gray-300" />
+        <div class="content-container py-4">
+          <p>&copy; 2026 Mt. Pleasant Christian School. All rights reserved.</p>
+        </div>
+      </footer>
+    </div>
+  </body>
+</html>
