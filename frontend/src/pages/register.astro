@@ -1,0 +1,773 @@
+---
+import Base from "../layouts/Base.astro";
+---
+
+<Base>
+  <header class="pt-12">
+    <div class="flex flex-col justify-between items-center">
+      <a href="/">
+        <img
+          src="/logo.png"
+          alt="Mt. Pleasant Christian School"
+          height="150"
+          width="150"
+          class="mx-auto"
+        />
+      </a>
+
+      <h1 class="text-3xl font-bold">Apply for Enrollment</h1>
+    </div>
+  </header>
+
+  <section class="pb-12 pt-6">
+    <div class="content-container">
+      <form
+        method="POST"
+        action="https://api.web3forms.com/submit"
+        class="space-y-12"
+      >
+        <!-- Replace with your actual endpoint and access key from Web3Forms, Formspree, etc. -->
+        <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY_HERE" />
+        <input type="hidden" name="subject" value="New Enrollment Submission" />
+
+        <!-- GENERAL INFORMATION -->
+        <section>
+          <!-- Parent/Guardian 1 -->
+          <div class="bg-gray-50 p-6 rounded-lg mb-8">
+            <h3 class="text-xl font-medium mb-4">Parent/Guardian 1</h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  name="parent1_full_name"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Relationship to Student</label
+                >
+                <input
+                  type="text"
+                  name="parent1_relationship"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Address</label
+                >
+                <input
+                  type="text"
+                  name="parent1_address"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  name="parent1_phone"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  name="parent1_email"
+                  required
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Occupation</label
+                >
+                <input
+                  type="text"
+                  name="parent1_occupation"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Highest Level of Education Completed</label
+                >
+                <input
+                  type="text"
+                  name="parent1_education"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Preferred Method of Communication</label
+                >
+                <select
+                  name="parent1_communication"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                >
+                  <option value="">Select...</option>
+                  <option>Phone</option>
+                  <option>Email</option>
+                  <option>Text</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >What church does your family attend?</label
+                >
+                <input
+                  type="text"
+                  name="parent1_church"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Are you interested in volunteering?</label
+                >
+                <div class="flex items-center space-x-6">
+                  <label
+                    ><input
+                      type="radio"
+                      name="parent1_volunteer"
+                      value="Yes"
+                      class="mr-2"
+                    /> Yes</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="parent1_volunteer"
+                      value="No"
+                      class="mr-2"
+                    /> No</label
+                  >
+                </div>
+                <textarea
+                  name="parent1_volunteer_areas"
+                  rows="3"
+                  placeholder="If yes, in which areas do you feel gifted or willing to serve?"
+                  class="mt-4 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Parent/Guardian 2 (if applicable) -->
+          <div class="bg-gray-50 p-6 rounded-lg">
+            <h3 class="text-xl font-medium mb-4">
+              Parent/Guardian 2 (if applicable)
+            </h3>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Full Name</label
+                >
+                <input
+                  type="text"
+                  name="parent2_full_name"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Relationship to Student</label
+                >
+                <input
+                  type="text"
+                  name="parent2_relationship"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <!-- Repeat similar fields as Parent 1, but optional -->
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Address (if different)</label
+                >
+                <input
+                  type="text"
+                  name="parent2_address"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Phone Number</label
+                >
+                <input
+                  type="tel"
+                  name="parent2_phone"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Email Address</label
+                >
+                <input
+                  type="email"
+                  name="parent2_email"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Occupation</label
+                >
+                <input
+                  type="text"
+                  name="parent2_occupation"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Highest Level of Education Completed</label
+                >
+                <input
+                  type="text"
+                  name="parent2_education"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Preferred Method of Communication</label
+                >
+                <select
+                  name="parent2_communication"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                >
+                  <option value="">Select...</option>
+                  <option>Phone</option>
+                  <option>Email</option>
+                  <option>Text</option>
+                </select>
+              </div>
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >What church does your family attend?</label
+                >
+                <input
+                  type="text"
+                  name="parent2_church"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                />
+              </div>
+              <div class="md:col-span-2">
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Are you interested in volunteering?</label
+                >
+                <div class="flex items-center space-x-6">
+                  <label
+                    ><input
+                      type="radio"
+                      name="parent2_volunteer"
+                      value="Yes"
+                      class="mr-2"
+                    /> Yes</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="parent2_volunteer"
+                      value="No"
+                      class="mr-2"
+                    /> No</label
+                  >
+                </div>
+                <textarea
+                  name="parent2_volunteer_areas"
+                  rows="3"
+                  placeholder="If yes, in which areas do you feel gifted or willing to serve?"
+                  class="mt-4 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                ></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Additional General Questions -->
+          <div class="mt-8 space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >How did you hear about Mt. Pleasant Christian School?</label
+              >
+              <textarea
+                name="how_heard"
+                rows="3"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Why are you seeking enrollment with our school?</label
+              >
+              <textarea
+                name="why_enroll"
+                rows="4"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >What are your primary educational goals for your child this
+                year?</label
+              >
+              <textarea
+                name="educational_goals"
+                rows="4"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >What other schools has your family ever participated in?</label
+              >
+              <textarea
+                name="other_schools"
+                rows="3"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+              <textarea
+                name="other_schools_experience"
+                rows="4"
+                placeholder="If yes, please describe your experience."
+                class="mt-4 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 2 — FAMILY & PARENT INFORMATION -->
+        <section>
+          <div class="space-y-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >How would you describe your family’s approach to discipline and
+                behavior expectations?</label
+              >
+              <textarea
+                name="discipline_approach"
+                rows="4"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >How does your family handle conflict resolution?</label
+              >
+              <textarea
+                name="conflict_resolution"
+                rows="4"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Our school partners with families who desire a
+                community-oriented, Christ-centered experience. What does
+                partnership with the school mean to you?</label
+              >
+              <textarea
+                name="partnership_meaning"
+                rows="4"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Are there any significant family dynamics, recent transitions,
+                or needs that would be helpful for us to know?</label
+              >
+              <textarea
+                name="family_dynamics"
+                rows="4"
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-1"
+                >Our hybrid model school requires two days of learning from
+                home. What is your reason for seeking this kind of educational
+                model? What do you view as your role in your child(ren)'s
+                education?</label
+              >
+              <textarea
+                name="hybrid_model_reason"
+                rows="5"
+                required
+                class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+              ></textarea>
+            </div>
+          </div>
+        </section>
+
+        <!-- SECTION 3 — STUDENT INFORMATION (Repeatable) -->
+        <section id="students-container">
+          <p class="text-sm text-gray-600 mb-4">
+            Please fill out this section for each student you are looking to
+            enroll. Use the button below to add more students.
+          </p>
+
+          <div class="student-section bg-gray-50 p-6 rounded-lg mb-6">
+            <h3 class="text-xl font-medium mb-4 text-indigo-600">Student 1</h3>
+            <div class="space-y-6">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Full Student Name</label
+                  >
+                  <input
+                    type="text"
+                    name="student_name[]"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Date of Birth</label
+                  >
+                  <input
+                    type="date"
+                    name="student_dob[]"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Grade Applying For</label
+                  >
+                  <input
+                    type="text"
+                    name="student_grade_applying[]"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Current Grade Level (if applicable)</label
+                  >
+                  <input
+                    type="text"
+                    name="student_current_grade[]"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Does your child have any diagnosed learning differences,
+                  delays, or exceptional needs?</label
+                >
+                <div class="flex items-center space-x-6">
+                  <label
+                    ><input
+                      type="radio"
+                      name="student_learning_needs[0]"
+                      value="Yes"
+                      class="mr-2"
+                    /> Yes</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="student_learning_needs[0]"
+                      value="No"
+                      class="mr-2"
+                    /> No</label
+                  >
+                </div>
+                <textarea
+                  name="student_learning_support[]"
+                  rows="4"
+                  placeholder="If yes, please explain how you currently support their learning."
+                  class="mt-4 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                ></textarea>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Has your child ever had an IEP, 504 plan, or behavior support
+                  plan?</label
+                >
+                <div class="flex items-center space-x-6">
+                  <label
+                    ><input
+                      type="radio"
+                      name="student_iep[0]"
+                      value="Yes"
+                      class="mr-2"
+                    /> Yes</label
+                  >
+                  <label
+                    ><input
+                      type="radio"
+                      name="student_iep[0]"
+                      value="No"
+                      class="mr-2"
+                    /> No</label
+                  >
+                </div>
+                <textarea
+                  name="student_iep_details[]"
+                  rows="4"
+                  placeholder="If yes, please provide details."
+                  class="mt-4 w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                ></textarea>
+              </div>
+
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-1"
+                  >Does your child receive (or has your child previously
+                  received) therapy services such as OT, PT, speech therapy, or
+                  counseling?</label
+                >
+                <textarea
+                  name="student_therapy[]"
+                  rows="4"
+                  class="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-indigo-500 focus:border-indigo-500"
+                ></textarea>
+              </div>
+
+              <!-- Additional student questions -->
+              <div class="space-y-6">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >How would you describe your child’s personality and
+                    temperament?</label
+                  >
+                  <textarea
+                    name="student_personality[]"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >How does your child typically respond to correction or
+                    redirection?</label
+                  >
+                  <textarea
+                    name="student_correction[]"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Has your child ever been dismissed from a school, program,
+                    or co-op?</label
+                  >
+                  <div class="flex items-center space-x-6">
+                    <label
+                      ><input
+                        type="radio"
+                        name="student_dismissed[0]"
+                        value="Yes"
+                        class="mr-2"
+                      /> Yes</label
+                    >
+                    <label
+                      ><input
+                        type="radio"
+                        name="student_dismissed[0]"
+                        value="No"
+                        class="mr-2"
+                      /> No</label
+                    >
+                  </div>
+                  <textarea
+                    name="student_dismissed_details[]"
+                    rows="4"
+                    placeholder="If yes, please explain."
+                    class="mt-4 w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >How does your child generally interact socially with peers?</label
+                  >
+                  <textarea
+                    name="student_social[]"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Does your child have any allergies, medical needs, or
+                    health concerns we should be aware of?</label
+                  >
+                  <textarea
+                    name="student_medical[]"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >What are your child’s academic strengths?</label
+                  >
+                  <textarea
+                    name="student_strengths[]"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >What areas does your child need the most support in?</label
+                  >
+                  <textarea
+                    name="student_support_areas[]"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >What motivates your child?</label
+                  >
+                  <textarea
+                    name="student_motivation[]"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Are there any specific concerns you would like us to be
+                    aware of regarding behavior, emotional regulation, or past
+                    school experiences?</label
+                  >
+                  <textarea
+                    name="student_concerns[]"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >What are your child’s interests and hobbies?</label
+                  >
+                  <textarea
+                    name="student_interests[]"
+                    rows="4"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-1"
+                    >Is there anything else you would like us to know so we can
+                    best support your child?</label
+                  >
+                  <textarea
+                    name="student_additional[]"
+                    rows="4"
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md"
+                  ></textarea>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="text-center">
+          <button
+            type="button"
+            id="add-student"
+            class="mb-8 px-6 py-3 bg-green-600 text-white font-medium rounded-md hover:bg-green-700"
+            >Add Another Student</button
+          >
+        </div>
+
+        <div class="text-center">
+          <button
+            type="submit"
+            class="px-8 py-4 bg-indigo-600 text-white text-lg font-medium rounded-md hover:bg-indigo-700"
+            >Submit Application</button
+          >
+        </div>
+      </form>
+    </div>
+  </section>
+</Base>
+
+<script>
+  let studentCount = 1;
+
+  const studentContainer = document.getElementById("add-student");
+
+  if (studentContainer) {
+    studentContainer.addEventListener("click", function () {
+      studentCount++;
+      const container = document.getElementById("students-container");
+      const template = container?.querySelector(".student-section");
+      const clone = template?.cloneNode(true);
+
+      if (clone) {
+        // Update heading
+        clone.querySelector("h3").textContent = `Student ${studentCount}`;
+
+        // Clear inputs
+        clone.querySelectorAll("input, textarea").forEach((el) => {
+          el.value = "";
+          if (el.type === "radio") el.checked = false;
+        });
+
+        // Update name attributes for array indexing (e.g., student_name[] remains [], but radios need unique groups)
+        clone
+          .querySelectorAll('[name*="learning_needs["]')
+          .forEach(
+            (el) =>
+              (el.name = el.name.replace(/\[\d+\]/, `[${studentCount - 1}]`)),
+          );
+        clone
+          .querySelectorAll('[name*="iep["]')
+          .forEach(
+            (el) =>
+              (el.name = el.name.replace(/\[\d+\]/, `[${studentCount - 1}]`)),
+          );
+        clone
+          .querySelectorAll('[name*="dismissed["]')
+          .forEach(
+            (el) =>
+              (el.name = el.name.replace(/\[\d+\]/, `[${studentCount - 1}]`)),
+          );
+
+        container.appendChild(clone);
+      }
+    });
+  }
+</script>
